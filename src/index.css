@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  
+  --color-atelier-bg: #FAF9F6;
+  --color-atelier-ink: #1A1C1A;
+  --color-atelier-gold: #775A19;
+  --color-atelier-cream: #EFEEEB;
+  --color-atelier-accent: #FFDEA5;
+}
+
+@layer base {
+  body {
+    @apply bg-atelier-bg text-atelier-ink antialiased font-sans;
+    background-image: 
+        radial-gradient(at 40% 20%, hsla(28,100%,74%,0.1) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, hsla(189,100%,56%,0.03) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, hsla(355,100%,93%,0.05) 0px, transparent 50%),
+        radial-gradient(at 80% 50%, hsla(340,100%,76%,0.03) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, hsla(22,100%,77%,0.1) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/40 backdrop-blur-xl border border-white/20 shadow-sm;
+  }
+  
+  .glass-nav {
+    @apply bg-white/40 backdrop-blur-2xl border border-white/20 shadow-lg;
+  }
+
+  .gilded-gradient {
+    background: linear-gradient(135deg, #FFDEA5, #775A19);
+  }
+
+  .mac-dots::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ff5f56;
+    box-shadow: 16px 0 0 #ffbd2e, 32px 0 0 #27c93f;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+  }
+}
